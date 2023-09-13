@@ -1,0 +1,3 @@
+﻿1.<indent=20px>Start SmartFoxServer 2X.</indent>
+2.<indent=20px>Open the <i>Connector</i> scene in the <i>Scenes</i> folder.</indent>
+3.<indent=20px>Click on the <b>Play</b> button.</indent>

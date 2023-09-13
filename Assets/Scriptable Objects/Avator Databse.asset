@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 146b8bf1df13c6d48aa33542bc747e0e, type: 3}
+  m_Name: Avator Databse
+  m_EditorClassIdentifier: 
+  avators:
+  - AvatorName: Cat 0
+    AvatorSprite: {fileID: -1698258781, guid: 789b19a2821ca414e8a57d8e96abdb9a, type: 3}
+  - AvatorName: Cat 1
+    AvatorSprite: {fileID: -455850518, guid: 789b19a2821ca414e8a57d8e96abdb9a, type: 3}
+  - AvatorName: Cat 2
+    AvatorSprite: {fileID: 174299274, guid: 789b19a2821ca414e8a57d8e96abdb9a, type: 3}
+  - AvatorName: Cat 3
+    AvatorSprite: {fileID: -1467790978, guid: 789b19a2821ca414e8a57d8e96abdb9a, type: 3}
+  - AvatorName: Cat 4
+    AvatorSprite: {fileID: 1593136794, guid: 789b19a2821ca414e8a57d8e96abdb9a, type: 3}
+  - AvatorName: Cat 5
+    AvatorSprite: {fileID: -186785688, guid: 789b19a2821ca414e8a57d8e96abdb9a, type: 3}
+  - AvatorName: Cat 6
+    AvatorSprite: {fileID: 909586838, guid: 789b19a2821ca414e8a57d8e96abdb9a, type: 3}
+  - AvatorName: Cat 7
+    AvatorSprite: {fileID: 2002664257, guid: 789b19a2821ca414e8a57d8e96abdb9a, type: 3}
+  - AvatorName: Cat 8
+    AvatorSprite: {fileID: -43799499, guid: 789b19a2821ca414e8a57d8e96abdb9a, type: 3}

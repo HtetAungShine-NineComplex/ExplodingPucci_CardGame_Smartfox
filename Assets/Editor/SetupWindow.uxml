@@ -1,0 +1,16 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <Style src="project://database/Assets/Editor/SetupWindow.uss?fileID=7433441132597879392&amp;guid=8801d6ed8a1ba4859b001ffa1ec9d9f1&amp;type=3#SetupWindow" />
+    <ui:ScrollView class="main main-scrollview">
+        <ui:Image style="background-image: url(&apos;project://database/Assets/Images/logo-sfs.png?fileID=2800000&amp;guid=697f3e7aea8f146c5963069ba76d00cd&amp;type=3#logo-sfs&apos;); height: 50px; -unity-background-scale-mode: scale-to-fit; width: auto; margin-bottom: 10px;" />
+        <ui:Label text="Click on the left button to visit the &lt;b&gt;smartfoxserver.com&lt;/b&gt; website. Download and install SmartFoxServer, then follow the instructions below to setup this demo project. Click on the right button to access the in-depth tutorial." display-tooltip-when-elided="true" />
+        <ui:VisualElement class="buttons-container">
+            <ui:Button text="Download SmartFoxServer ↗" display-tooltip-when-elided="true" name="downloadBt" style="margin-left: 10px; margin-right: 10px; margin-top: 10px; margin-bottom: 10px; padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px; white-space: normal;" />
+            <ui:Button text="Demo Project Tutorial ↗" display-tooltip-when-elided="true" name="tutorialBt" style="margin-left: 10px; margin-right: 10px; margin-top: 10px; margin-bottom: 10px; padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px; white-space: normal;" />
+        </ui:VisualElement>
+        <ui:Label text="SETUP INSTRUCTIONS" style="-unity-font-style: bold; margin-bottom: 10px;" />
+        <ui:TextElement text="Hello World! " name="instructionsLb" />
+    </ui:ScrollView>
+    <ui:VisualElement class="footer">
+        <ui:Toggle label="Show again" value="true" name="showTg" style="-unity-text-align: upper-right;" />
+    </ui:VisualElement>
+</ui:UXML>
