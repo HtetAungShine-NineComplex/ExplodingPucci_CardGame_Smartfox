@@ -17,7 +17,7 @@ public class UnityEditorStartSceneSetter
     static UnityEditorStartSceneSetter()
     {
         // In Unity Editor, set Play Mode scene to LOGIN scene
-        EditorSceneManager.playModeStartScene = AssetDatabase.LoadAssetAtPath<SceneAsset>("Assets/Scenes/Login.unity");
+        EditorSceneManager.playModeStartScene = AssetDatabase.LoadAssetAtPath<SceneAsset>("Assets/Scenes/GuestLogin.unity");
     }
 }
 #endif
@@ -149,7 +149,7 @@ public class GlobalManager : MonoBehaviour
 
         Debug.Log("Connection to SmartFoxServer lost; reason is: " + connLostReason);
 
-        if (SceneManager.GetActiveScene().name != "Login")
+        if (SceneManager.GetActiveScene().name != "GuestLogin")
         {
             if (connLostReason != ClientDisconnectionReason.MANUAL)
             {
@@ -167,7 +167,7 @@ public class GlobalManager : MonoBehaviour
             }
 
             // Switch to the LOGIN scene
-            SceneManager.LoadScene("Login");
+            SceneManager.LoadScene("GuestLogin");
         }
     }
 }

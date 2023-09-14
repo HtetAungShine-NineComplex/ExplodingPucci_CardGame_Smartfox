@@ -211,6 +211,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bc78ee55c127d148aed9651ff781fb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  content: {fileID: 0}
-  staticCell: {fileID: 3824509881898960104}
-  verticalSpacing: 10
+  staticCell_rect: {fileID: 3824509881898960104}

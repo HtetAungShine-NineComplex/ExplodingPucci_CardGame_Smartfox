@@ -10,7 +10,7 @@ using TMPro;
 using Sfs2X.Entities.Data;
 
 /**
- * Script attached to the Controller object in the Login scene.
+ * Script attached to the Controller object in the GuestLogin scene.
  */
 public class LoginSceneController : BaseSceneController
 {
@@ -122,7 +122,7 @@ public class LoginSceneController : BaseSceneController
 	}
 
 	/**
-	 * On Login button click, connect to SmartFoxServer.
+	 * On GuestLogin button click, connect to SmartFoxServer.
 	 */
 	public void OnLoginButtonClick()
 	{
@@ -231,7 +231,7 @@ public class LoginSceneController : BaseSceneController
 			Debug.Log("SFS2X API version: " + sfs.Version);
 			Debug.Log("Connection mode is: " + sfs.ConnectionMode);
 
-			// Login
+			// GuestLogin
 			sfs.Send(new LoginRequest(""));
 			//signUp();
 		}
@@ -269,7 +269,7 @@ public class LoginSceneController : BaseSceneController
 		sfs.Disconnect();
 
 		// Show error message
-		errorText.text = "Login failed due to the following error:\n" + (string)evt.Params["errorMessage"];
+		errorText.text = "GuestLogin failed due to the following error:\n" + (string)evt.Params["errorMessage"];
 	}
 	#endregion
 }

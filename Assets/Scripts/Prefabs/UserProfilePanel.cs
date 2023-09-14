@@ -54,11 +54,11 @@ public class UserProfilePanel : BasePanel
 		stateDropdown.SetValueWithoutNotify(buddyManager.BuddyStates.IndexOf(buddyManager.MyState));
 
 		// Buddy variable: user birth year
-		BuddyVariable year = buddyManager.GetMyVariable(LobbySceneController.BUDDYVAR_YEAR);
+		BuddyVariable year = buddyManager.GetMyVariable(LobbyController.BUDDYVAR_YEAR);
 		yearInput.text = ((year != null && !year.IsNull()) ? year.GetIntValue().ToString() : "");
 
 		// Buddy variable: user mood
-		BuddyVariable mood = buddyManager.GetMyVariable(LobbySceneController.BUDDYVAR_MOOD);
+		BuddyVariable mood = buddyManager.GetMyVariable(LobbyController.BUDDYVAR_MOOD);
 		moodInput.text = ((mood != null && !mood.IsNull()) ? mood.GetStringValue() : "");
 	}
 
@@ -73,10 +73,10 @@ public class UserProfilePanel : BasePanel
 			expValues.Add(optionData.text);
 
 		// User variable: experience
-		expDropdown.SetValueWithoutNotify(expValues.IndexOf(user.GetVariable(LobbySceneController.USERVAR_EXPERIENCE).GetStringValue()));
+		expDropdown.SetValueWithoutNotify(expValues.IndexOf(user.GetVariable(LobbyController.USERVAR_EXPERIENCE).GetStringValue()));
 
 		// User variable: ranking
-		rankInput.Ranking = user.GetVariable(LobbySceneController.USERVAR_RANKING).GetIntValue();
+		rankInput.Ranking = user.GetVariable(LobbyController.USERVAR_RANKING).GetIntValue();
 	}
 
 	/**
@@ -109,9 +109,9 @@ public class UserProfilePanel : BasePanel
 	{
 		// Dispatch event
 		if (yearInput.text != "")
-			onBuddyDetailChange.Invoke(LobbySceneController.BUDDYVAR_YEAR, Int32.Parse(yearInput.text));
+			onBuddyDetailChange.Invoke(LobbyController.BUDDYVAR_YEAR, Int32.Parse(yearInput.text));
 		else
-			onBuddyDetailChange.Invoke(LobbySceneController.BUDDYVAR_YEAR, null);
+			onBuddyDetailChange.Invoke(LobbyController.BUDDYVAR_YEAR, null);
 	}
 
 	/**
@@ -120,7 +120,7 @@ public class UserProfilePanel : BasePanel
 	public void OnMoodInputEnd()
 	{
 		// Dispatch event
-		onBuddyDetailChange.Invoke(LobbySceneController.BUDDYVAR_MOOD, moodInput.text);
+		onBuddyDetailChange.Invoke(LobbyController.BUDDYVAR_MOOD, moodInput.text);
 	}
 
 	/**
@@ -138,7 +138,7 @@ public class UserProfilePanel : BasePanel
 	public void OnExperienceDropdownChange()
 	{
 		// Dispatch event
-		onPlayerDetailChange.Invoke(LobbySceneController.USERVAR_EXPERIENCE, expDropdown.options[expDropdown.value].text);
+		onPlayerDetailChange.Invoke(LobbyController.USERVAR_EXPERIENCE, expDropdown.options[expDropdown.value].text);
 	}
 
 	/**
@@ -147,6 +147,6 @@ public class UserProfilePanel : BasePanel
 	public void OnRankingChange()
 	{
 		// Dispatch event
-		onPlayerDetailChange.Invoke(LobbySceneController.USERVAR_RANKING, rankInput.Ranking);
+		onPlayerDetailChange.Invoke(LobbyController.USERVAR_RANKING, rankInput.Ranking);
 	}
 }

@@ -344,13 +344,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1465861843}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f5af1840b25db40569effb0448a246dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loginButton: {fileID: 0}
-  logoutButton: {fileID: 0}
+  guest_Btn: {fileID: 0}
+  loginName_Input: {fileID: 0}
+  loginPassword_Input: {fileID: 0}
+  login_Btn: {fileID: 0}
+  createAnAcc_btn: {fileID: 0}
   errorText: {fileID: 0}
   host: 127.0.0.1
   tcpPort: 9933
@@ -362,9 +365,9 @@ MonoBehaviour:
   debug: 0
   logLevel: 200
   loginUI: {fileID: 2533233691204342729, guid: ff8be04376ecd924f930b8812e02ca05, type: 3}
-  name_Input: {fileID: 0}
-  email_Input: {fileID: 0}
-  password_Input: {fileID: 0}
+  regName_Input: {fileID: 0}
+  regEmail_Input: {fileID: 0}
+  regPassword_Input: {fileID: 0}
   register_Btn: {fileID: 0}
 --- !u!1 &1763435423
 GameObject:

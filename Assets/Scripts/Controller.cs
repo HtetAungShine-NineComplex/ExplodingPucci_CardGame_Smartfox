@@ -18,10 +18,13 @@ public class Controller : MonoBehaviour
 	//----------------------------------------------------------
 	// UI elements
 	//----------------------------------------------------------
-
-	public Button loginButton;
-	public Button logoutButton;
-	public Text errorText; 
+	[SerializeField] private Button guest_Btn;
+	[Header("Login Components")]
+	[SerializeField] private TMP_InputField loginName_Input;
+	[SerializeField] private TMP_InputField loginPassword_Input;
+	[SerializeField] private Button login_Btn;
+	[SerializeField] private Button createAnAcc_btn;
+	[SerializeField] private Text errorText; 
 
 	//----------------------------------------------------------
 	// Editor public properties
@@ -57,14 +60,14 @@ public class Controller : MonoBehaviour
 	[Tooltip("Client-side SmartFoxServer logging level")]
 	public LogLevel logLevel = LogLevel.INFO;
 
-	[Header("Login UI")]
+	[Header("GuestLogin UI")]
 	[SerializeField] private LoginUI loginUI;
 
 	[Header("Register Components")]
 
-	[SerializeField] private TMP_InputField name_Input;
-	[SerializeField] private TMP_InputField email_Input;
-	[SerializeField] private TMP_InputField password_Input;
+	[SerializeField] private TMP_InputField regName_Input;
+	[SerializeField] private TMP_InputField regEmail_Input;
+	[SerializeField] private TMP_InputField regPassword_Input;
 	[SerializeField] private Button register_Btn;
 	//----------------------------------------------------------
 	// Private properties
@@ -78,11 +81,16 @@ public class Controller : MonoBehaviour
 	#region
 	private void Start()
 	{
+		
 		// Make sure the application runs in background
 		Application.runInBackground = true;
 
+		register_Btn.onClick.AddListener(() => OnRegisterButtonClick());
+		guest_Btn.onClick.AddListener(() => OnGuestLoginClick());
+		createAnAcc_btn.onClick.AddListener(() => OnGuestLoginClick());
 
-	}
+        Connect();
+    }
 
 	private void Update()
 	{
@@ -113,18 +121,18 @@ public class Controller : MonoBehaviour
 	}
 
 	/**
-	 * On Login button click, connect to SmartFoxServer.
+	 * On GuestLogin button click, connect to SmartFoxServer.
 	 */
-	public void OnLoginButtonClick()
+	public void OnGuestLoginClick()
 	{
-		Connect();
-		Login();
+		//Connect();
+		GuestLogin();
 	}
 
 	public void OnRegisterButtonClick()
 	{
        
-        Connect();
+        //Connect();
         sfs.Send(new LogoutRequest());
         sfs.Send(new LoginRequest("", "", "CardGame"));
         Register();
@@ -194,13 +202,13 @@ public class Controller : MonoBehaviour
 		sfs.Connect(cfg);
 	}
 
-	private void Login()
+	private void GuestLogin()
 	{
 		Debug.Log("Performing login...");
 
-        // Guest Login
+        // Guest GuestLogin
         sfs.Send(new LogoutRequest());
-        sfs.Send(new LoginRequest(""));
+        sfs.Send(new LoginRequest("", "", "CardGame"));
 	}
 
 	private void Register()
@@ -208,12 +216,12 @@ public class Controller : MonoBehaviour
 		Debug.Log("Performing register...");
 
         //Register
-        if (name_Input.text != string.Empty && password_Input.text != string.Empty)
+        if (regName_Input.text != string.Empty && regPassword_Input.text != string.Empty)
         {
             ISFSObject requestObj = new SFSObject();
-            requestObj.PutUtfString("username", name_Input.text);
-            requestObj.PutUtfString("password", password_Input.text);
-            requestObj.PutUtfString("email", email_Input.text);
+            requestObj.PutUtfString("username", regName_Input.text);
+            requestObj.PutUtfString("password", regPassword_Input.text);
+            requestObj.PutUtfString("email", regEmail_Input.text);
 
             sfs.Send(new ExtensionRequest("$SignUp.Submit", requestObj));
         }
@@ -247,17 +255,17 @@ public class Controller : MonoBehaviour
 			}
 			else
 			{
-                // Attempt login
-                
-                /*Login();
-                sfs.Send(new LogoutRequest());
-                sfs.Send(new LoginRequest("", "", "CardGame"));
-                Register();*/
+				// Attempt login
+
+				//GuestLogin();
+				/*sfs.Send(new LogoutRequest());
+				sfs.Send(new LoginRequest("", "", "CardGame"));*/
+				//Register();
 			}
 #else
 			// Attempt login
-			/*Login();
-			Register();*/
+			GuestLogin();
+			Register();
 #endif
         }
         else
@@ -311,7 +319,7 @@ public class Controller : MonoBehaviour
 			Debug.Log("Encryption initialized successfully");
 
             // Attempt login
-           /* Login();
+           /* GuestLogin();
             sfs.Send(new LogoutRequest());
             sfs.Send(new LoginRequest("", "", "CardGame"));
             Register();*/
@@ -331,7 +339,7 @@ public class Controller : MonoBehaviour
 
 	private void OnLogin(BaseEvent evt)
 	{
-		Debug.Log("Login successful");
+		Debug.Log("GuestLogin successful");
 
 	}
     private void OnSignUpResponse(BaseEvent evt)
@@ -356,14 +364,14 @@ public class Controller : MonoBehaviour
     }
     private void OnLoginError(BaseEvent evt)
 	{
-		Debug.Log("Login failed");
+		Debug.Log("GuestLogin failed");
 
 		// Disconnect
 		// NOTE: this causes a CONNECTION_LOST event with reason "manual", which in turn removes all SFS listeners
 		sfs.Disconnect();
 
 		// Show error message
-		errorText.text = "Login failed due to the following error:\n" + (string)evt.Params["errorMessage"];
+		errorText.text = "GuestLogin failed due to the following error:\n" + (string)evt.Params["errorMessage"];
 	}
 	#endregion
 }

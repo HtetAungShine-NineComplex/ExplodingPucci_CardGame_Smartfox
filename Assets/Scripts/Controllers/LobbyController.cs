@@ -19,7 +19,7 @@ using Sfs2X.Requests.Game;
 /**
  * Script attached to the Controller object in the Lobby scene.
  */
-public class LobbySceneController : BaseSceneController
+public class LobbyController : BaseSceneController
 {
 	public static string BUDDYVAR_YEAR = SFSBuddyVariable.OFFLINE_PREFIX + "year";
 	public static string BUDDYVAR_MOOD = "mood";
@@ -116,7 +116,7 @@ public class LobbySceneController : BaseSceneController
 	/**
 	 * On Logout button click, disconnect from SmartFoxServer.
 	 * This causes the SmartFox listeners added by this scene to be removed (see BaseSceneController.OnDestroy method)
-	 * and the Login scene to be loaded (see SFSClientManager.OnConnectionLost method).
+	 * and the GuestLogin scene to be loaded (see SFSClientManager.OnConnectionLost method).
 	 */
 	public void OnLogoutButtonClick()
 	{

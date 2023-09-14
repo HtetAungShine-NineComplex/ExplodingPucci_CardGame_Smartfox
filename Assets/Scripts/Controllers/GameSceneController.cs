@@ -105,7 +105,7 @@ public class GameSceneController : BaseSceneController
 	}
 
 	/**
-	 * On Leave button click, go back to Login scene.
+	 * On Leave button click, go back to GuestLogin scene.
 	 */
 	public void OnLeaveButtonClick()
 	{

@@ -51,11 +51,11 @@ public class BuddyListItem : MonoBehaviour
 
 		// Age
 		DateTime now = DateTime.Now;
-		BuddyVariable year = buddy.GetVariable(LobbySceneController.BUDDYVAR_YEAR);
+		BuddyVariable year = buddy.GetVariable(LobbyController.BUDDYVAR_YEAR);
 		mainLabel.text += (year != null && !year.IsNull()) ? " <size=12>(" + (now.Year - year.GetIntValue()) + " yo)</size>" : "";
 
 		// Mood
-		BuddyVariable mood = buddy.GetVariable(LobbySceneController.BUDDYVAR_MOOD);
+		BuddyVariable mood = buddy.GetVariable(LobbyController.BUDDYVAR_MOOD);
 
 		if (mood != null && !mood.IsNull() && mood.GetStringValue() != "")
 		{
@@ -66,7 +66,7 @@ public class BuddyListItem : MonoBehaviour
 			moodLabel.gameObject.SetActive(false);
 
 		// Save blocked state
-		// (see LobbySceneController.UpdateBuddyListItem method)
+		// (see LobbyController.UpdateBuddyListItem method)
 		isBlocked = buddy.IsBlocked;
 
 		// If buddy is not blocked and is temporary, show add button and hide remove button
