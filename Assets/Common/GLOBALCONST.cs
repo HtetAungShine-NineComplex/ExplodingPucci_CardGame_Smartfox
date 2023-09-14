@@ -10,6 +10,7 @@ public class GLOBALCONST
 	public const string MAINMENU_UI = "MainMenuUI";
 	public const string FINDROOM_UI = "FindRoomUI";
 	public const string LOGIN_UI = "ExplodingPucciLoginUI";
-	#endregion
+	public const string LOBBY_UI = "LobbyUI";
+    #endregion
 
 }

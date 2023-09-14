@@ -9,6 +9,7 @@ using Sfs2X.Util;
 using Sfs2X.Entities.Data;
 using Sfs2X.Bitswarm;
 using TMPro;
+using TinAungKhant.UIManagement;
 
 /**
  * Script attached to the Controller object in the scene.
@@ -340,7 +341,8 @@ public class Controller : MonoBehaviour
 	private void OnLogin(BaseEvent evt)
 	{
 		Debug.Log("GuestLogin successful");
-
+		UIManager.Instance.CloseUI(GLOBALCONST.LOGIN_UI);
+		UIManager.Instance.ShowUI(GLOBALCONST.LOBBY_UI);
 	}
     private void OnSignUpResponse(BaseEvent evt)
     {
