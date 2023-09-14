@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3451960016929396370}
   - component: {fileID: 3150376383014186844}
+  - component: {fileID: 5701002172846167609}
   m_Layer: 5
   m_Name: LobbyUI
   m_TagString: Untagged
@@ -75,6 +76,19 @@ MonoBehaviour:
   buddyListItemPrefab: {fileID: 6667398457249199867, guid: 7e89d1c35ec994bfbbe5d77d8323945b, type: 3}
   buddyNameInput: {fileID: 6610802547227915290}
   chatPanel: {fileID: 7506671137985822269}
+--- !u!114 &5701002172846167609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4412947459811282897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23d2c9dbdf61090409231f33f3e379a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsCamUI: 0
 --- !u!1 &6610802546627868800
 GameObject:
   m_ObjectHideFlags: 0
