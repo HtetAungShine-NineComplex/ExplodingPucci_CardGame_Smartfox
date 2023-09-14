@@ -1,0 +1,42 @@
+public class ExtensionEventNames
+{
+    public const string MESSAGE = "message";
+    public const string CMD = "cmd";
+    public const string PARAMS = "params";
+    public const string START_GAME = "startGame";
+    public const string GAME_STARTED = "gameStarted";
+    public const string SELF_DRAW_CARD = "selfDrawCard";
+    public const string DRAW_CARD = "drawCard";
+    public const string GOT_EXPLODE_CARD = "gotExplodeCard";
+    public const string A_PLAYER_DRAW_CARD = "aPlayerDrawCard";
+    public const string A_PLAYER_GOT_EXPLODE_CARD = "aPlayerGotExplodeCard";
+    public const string CARD_LEFT_ON_DECK = "cardLeftOnDeck";
+    public const string DREW_CARD = "drewCard";
+    public const string CARD_TYPE_ID = "cardTypeID";
+    public const string DRAWER = "drawer";
+    public const string CURRENT_TURN_USER_NAME = "currentTurnUserName";
+    public const string DECISION_MAKER = "decisionMaker";
+    public const string PREVIOUS_TURN_USER_NAME = "previousTurnUserName";
+    public const string PARTICIPANT_CHANGED = "participantChanged";
+    public const string GET_CURRENT_TURN_PARTICIPANT = "getCurrentTurnParticipant";
+    public const string CURRENT_TURN_PARTICIPANT = "currentTurnParticipant";
+    public const string PLAYER_EXPLODED = "playerExploded";
+    public const string DEFUSE = "defuse";
+    public const string DEFUSE_SUCCESS = "defuseSuccess";
+    public const string USED_CARD = "usedCard";
+    public const string CARD_NAME = "cardName";
+    public const string CARD_POSITION = "cardPosition";
+    public const string FIRST = "first";
+    public const string SECOND = "second";
+    public const string THIRD = "third";
+    public const string LAST = "last";
+    public const string PUT_CARD_ON_DECK = "putCardOnDeck";
+    public const string PUT_CARD_ON_DECK_SUCCESS = "putCardOnDeckSuccess";
+    public const string DEFUSE_PLAYER = "defusePlayer";
+    public const string GET_EXISTING_CARDS = "getExistingCards";
+    public const string EXISTING_CARDS = "existingCards";
+    public const string EXISTING_CARDS_RESPONSE = "existingCardResponse";
+    public const string GAME_OVER = "gameOver";
+    public const string WINNER = "winner";
+    public const string ROOM_ID = "roomID";
+}
